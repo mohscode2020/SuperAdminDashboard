@@ -1,0 +1,1436 @@
+Watching for file changes with StatReloader
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"POST /api/auth/login/ HTTP/1.1" 200 802
+"OPTIONS /api/users/?page=1&search= HTTP/1.1" 200 0
+"OPTIONS /api/activity-logs/?page=1 HTTP/1.1" 200 0
+"OPTIONS /api/users/?page=1&search= HTTP/1.1" 200 0
+"OPTIONS /api/activity-logs/?page=1 HTTP/1.1" 200 0
+Internal Server Error: /api/activity-logs/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+"GET /api/activity-logs/?page=1 HTTP/1.1" 500 108569
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+Internal Server Error: /api/activity-logs/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/activity-logs/?page=1 HTTP/1.1" 500 108569
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+"OPTIONS /api/roles/ HTTP/1.1" 200 0
+"OPTIONS /api/roles/ HTTP/1.1" 200 0
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+"GET /api/roles/ HTTP/1.1" 500 107991
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/roles/ HTTP/1.1" 500 107991
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+"OPTIONS /api/permissions/ HTTP/1.1" 200 0
+"OPTIONS /api/permissions/ HTTP/1.1" 200 0
+"GET /api/permissions/ HTTP/1.1" 200 867
+"GET /api/permissions/ HTTP/1.1" 200 867
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/roles/ HTTP/1.1" 500 107991
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/roles/ HTTP/1.1" 500 107991
+"OPTIONS /api/activity-logs/?page=1&search=&action=&date_from=&date_to= HTTP/1.1" 200 0
+"OPTIONS /api/activity-logs/?page=1&search=&action=&date_from=&date_to= HTTP/1.1" 200 0
+Internal Server Error: /api/activity-logs/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/activity-logs/?page=1&search=&action=&date_from=&date_to= HTTP/1.1" 500 109753
+Internal Server Error: /api/activity-logs/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/activity-logs/?page=1&search=&action=&date_from=&date_to= HTTP/1.1" 500 109753
+Internal Server Error: /api/activity-logs/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/activity-logs/?page=1 HTTP/1.1" 500 108569
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+Internal Server Error: /api/activity-logs/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+"GET /api/activity-logs/?page=1 HTTP/1.1" 500 108569
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/roles/ HTTP/1.1" 500 107991
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+"GET /api/roles/ HTTP/1.1" 500 107991
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 183
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 183
+"OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 483
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 483
+"GET /api/auth/profile/ HTTP/1.1" 200 300
+"GET /api/auth/profile/ HTTP/1.1" 200 300
+"OPTIONS /api/users/?page=1&search= HTTP/1.1" 200 0
+"OPTIONS /api/roles/ HTTP/1.1" 200 0
+"OPTIONS /api/users/?page=1&search= HTTP/1.1" 200 0
+"OPTIONS /api/roles/ HTTP/1.1" 200 0
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/roles/ HTTP/1.1" 500 107991
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+"GET /api/roles/ HTTP/1.1" 500 107991
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 183
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 183
+"OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 483
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 483
+"GET /api/auth/profile/ HTTP/1.1" 200 300
+"GET /api/auth/profile/ HTTP/1.1" 200 300
+"OPTIONS /api/users/?page=1&search= HTTP/1.1" 200 0
+"OPTIONS /api/roles/ HTTP/1.1" 200 0
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+"GET /api/roles/ HTTP/1.1" 500 107991
+Internal Server Error: /api/roles/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\rest_framework\views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+            ^^^^^^^^^^^^
+TypeError: 'HasPermission' object is not callable
+Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: activity_logs_activitylog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 29, in process_response
+    self._log_activity(request, response)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\middleware.py", line 68, in _log_activity
+    ActivityLog.log_activity(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\activity_logs\models.py", line 72, in log_activity
+    return cls.objects.create(**log_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\Downloads\SuperAdminDashboard\backend\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: activity_logs_activitylog
+"GET /api/roles/ HTTP/1.1" 500 107991
+"GET /api/users/?page=1&search= HTTP/1.1" 500 178682
+Watching for file changes with StatReloader
