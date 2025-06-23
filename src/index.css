@@ -2,12 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
+@layer utilities {
+  .border-border {
+    @apply border border-gray-300; /* Or whatever style you want */
   }
 }
 
